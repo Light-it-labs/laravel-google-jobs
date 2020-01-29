@@ -1,0 +1,9 @@
+{
+    "name": "light-it/laravel_google_jobs",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Lightit\\LaravelGoogleJobs\\": "src/"
+        }
+    }
+}
