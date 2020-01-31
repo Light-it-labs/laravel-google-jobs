@@ -1,23 +1,34 @@
-/vendor/
-node_modules/
-npm-debug.log
-yarn-error.log
+# phpstorm project files
+.idea
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
+# netbeans project files
+nbproject
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
 
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
+# windows thumbnail cache
+Thumbs.db
 
-storage/*.key
-.env
-Homestead.yaml
-Homestead.json
-/.vagrant
+# composer vendor dir
+/vendor
+
+/composer.lock
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+# phpunit cache
 .phpunit.result.cache
+
+# build files
+build/

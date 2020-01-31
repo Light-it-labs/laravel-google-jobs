@@ -1,9 +1,24 @@
 {
-    "name": "light-it/laravel_google_jobs",
-    "require": {},
+    "name": "lightit/laravel_google_jobs",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "illuminate/support": "5.8.*|^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.8.4|^4.0",
+        "phpspec/phpspec": "~5.1.1"
+    },
     "autoload": {
         "psr-4": {
-            "Lightit\\LaravelGoogleJobs\\": "src/"
+            "Lightit\\LaravelGoogleJobs\\": "src"
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lightit\\LaravelGoogleJobs\\Tests\\": "tests"
+        }
+    },
+    "prefer-stable": true
 }
