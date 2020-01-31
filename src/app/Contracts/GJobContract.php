@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Lightit\LaravelGoogleJobs\app\Contracts;
+namespace Lightit\LaravelGoogleJobs\Contracts;
 
-use Lightit\LaravelGoogleJobs\app\GJob;
+use Lightit\LaravelGoogleJobs\GJob;
 
 /**
  * This contract defines how GJob class is going to work
@@ -33,8 +33,7 @@ interface GJobContract
     /**
      * Generates a json string with the desired google jobs format
      *
-     * @param array $parameters
      * @return string
      */
-    public function generate(array $parameters): string;
+    public function generate(): string;
 }

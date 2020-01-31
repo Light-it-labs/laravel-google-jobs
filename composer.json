@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Lightit\\LaravelGoogleJobs\\": "src"
+            "Lightit\\LaravelGoogleJobs\\": "src/app"
         }
     },
     "autoload-dev": {
