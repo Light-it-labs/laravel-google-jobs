@@ -1,4 +1,6 @@
 # Laravel Google Jobs Integration
+![](https://travis-ci.com/Light-it-labs/laravel_google_jobs.svg?branch=master)
+
 This package allows you to generate a valid Json object for Google Jobs in a easy way. 
 
 ## About Lightit
