@@ -3,26 +3,29 @@
 
 namespace Lightit\LaravelGoogleJobs\Tests\app;
 
-use Lightit\LaravelGoogleJobs\Contracts\GJobContract;
+use Lightit\LaravelGoogleJobs\Exceptions\FieldsValidationException;
+use Lightit\LaravelGoogleJobs\GJob;
 use Lightit\LaravelGoogleJobs\Tests\BaseTest;
 
 class GJobsTest extends BaseTest
 {
-    /** @var GJobContract */
+    /** @var GJob */
     protected $gJob;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->gJob = $this->app->make(GJobContract::class);
+        $this->gJob = $this->app->make(GJob::class);
     }
 
-    /** @test */
+    /** @test
+     * @throws FieldsValidationException
+     */
     public function test_generate()
     {
         // Given
-        $gJobObject = $this->gJob->fields([
+        $jobArray = [
             'datePosted' => '2016-02-18',
             'text' => 'lorem',
             'hiringOrganization' => [
@@ -41,12 +44,13 @@ class GJobsTest extends BaseTest
             ],
             'title' => 'Software Engineer',
             'validThrough' => '2017-03-18T00:00'
-        ]);
+        ];
+        $gJobObject = $this->gJob->fields($jobArray);
 
         // Performing
         $result = $gJobObject->generate();
 
         // Expect
-        $this->assertEquals(2, $result);
+        $this->assertEquals($result, json_encode($jobArray));
     }
 }

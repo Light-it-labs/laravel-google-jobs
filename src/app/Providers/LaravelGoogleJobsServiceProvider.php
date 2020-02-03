@@ -9,10 +9,6 @@ use Lightit\LaravelGoogleJobs\GJob;
 
 class LaravelGoogleJobsServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public $singletons = [
-        GJobContract::class => GJob::class
-    ];
-
     /**
      * Register services.
      *
@@ -29,5 +25,6 @@ class LaravelGoogleJobsServiceProvider extends ServiceProvider implements Deferr
      */
     public function boot()
     {
+        $this->app->singleton(GJobContract::class, GJob::class);
     }
 }
