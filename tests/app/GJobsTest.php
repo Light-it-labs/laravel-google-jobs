@@ -16,7 +16,7 @@ class GJobsTest extends BaseTest
     {
         parent::setUp();
 
-        $this->gJob = $this->app->make('GJob');
+        $this->gJob = $this->app->make(GJob::class);
     }
 
     /** @test
