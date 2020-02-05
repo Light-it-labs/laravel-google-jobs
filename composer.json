@@ -20,5 +20,15 @@
             "Lightit\\LaravelGoogleJobs\\Tests\\": "tests"
         }
     },
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lightit\\LaravelGoogleJobs\\Providers\\LaravelGoogleJobsServiceProvider"
+            ],
+            "aliases": {
+                "GJob": "Lightit\\LaravelGoogleJobs\\Facades\\GJob"
+            }
+        }
+    }
 }

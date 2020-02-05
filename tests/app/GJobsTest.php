@@ -16,7 +16,7 @@ class GJobsTest extends BaseTest
     {
         parent::setUp();
 
-        $this->gJob = $this->app->make(GJob::class);
+        $this->gJob = $this->app->make('GJob');
     }
 
     /** @test
@@ -45,7 +45,9 @@ class GJobsTest extends BaseTest
             'title' => 'Software Engineer',
             'validThrough' => '2017-03-18T00:00'
         ];
+        //dd(\Lightit\LaravelGoogleJobs\Facades\GJob::fields($jobArray));
         $gJobObject = $this->gJob->fields($jobArray);
+
 
         // Performing
         $result = $gJobObject->generate();

@@ -2,12 +2,12 @@
 
 namespace Lightit\LaravelGoogleJobs\Providers;
 
-use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Lightit\LaravelGoogleJobs\Contracts\GJobContract;
 use Lightit\LaravelGoogleJobs\GJob;
+use Lightit\LaravelGoogleJobs\Validator;
 
-class LaravelGoogleJobsServiceProvider extends ServiceProvider implements DeferrableProvider
+class LaravelGoogleJobsServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -16,6 +16,9 @@ class LaravelGoogleJobsServiceProvider extends ServiceProvider implements Deferr
      */
     public function register()
     {
+        $this->app->singleton('GJob', function() {
+            return new GJob(new Validator());
+        });
     }
 
     /**
@@ -25,6 +28,5 @@ class LaravelGoogleJobsServiceProvider extends ServiceProvider implements Deferr
      */
     public function boot()
     {
-        $this->app->singleton(GJobContract::class, GJob::class);
     }
 }
