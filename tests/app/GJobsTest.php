@@ -45,7 +45,7 @@ class GJobsTest extends BaseTest
             'title' => 'Software Engineer',
             'validThrough' => '2017-03-18T00:00'
         ];
-        //dd(\Lightit\LaravelGoogleJobs\Facades\GJob::fields($jobArray));
+
         $gJobObject = $this->gJob->fields($jobArray);
 
 
