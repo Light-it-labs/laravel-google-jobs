@@ -16,7 +16,7 @@ class LaravelGoogleJobsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('GJob', function() {
+        $this->app->singleton(GJobContract::class, function($app) {
             return new GJob(new Validator());
         });
     }

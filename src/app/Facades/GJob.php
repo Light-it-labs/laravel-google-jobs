@@ -5,6 +5,7 @@ namespace Lightit\LaravelGoogleJobs\Facades;
 
 
 use Illuminate\Support\Facades\Facade;
+use Lightit\LaravelGoogleJobs\Contracts\GJobContract;
 
 /**
  * GJob Facade
@@ -15,5 +16,5 @@ use Illuminate\Support\Facades\Facade;
  */
 class GJob extends Facade
 {
-    protected static function getFacadeAccessor() { return 'GJob'; }
+    protected static function getFacadeAccessor() { return GJobContract::class; }
 }

@@ -48,7 +48,6 @@ class GJobsTest extends BaseTest
 
         $gJobObject = $this->gJob->fields($jobArray);
 
-
         // Performing
         $result = $gJobObject->generate();
 
