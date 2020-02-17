@@ -56,15 +56,13 @@ As the name says, this method adds all `array $parameters` into your current ins
 
 `$this->gjob->generate(): string` 
 
-Generates the the proper Json format validating all instance parameters.
+Generates the proper Json format validating all instance parameters.
 
 ## Example
 ```php
 public function show(Request $request, $id)
 {
     // Lets say we want to allow google to render our job offer
-     // Now, lets fetch the data from the database
-    $jobOffer = JobOffer::findOrFail($id);
     
     // Cool! Is time to do some magic with this package, we are going to use the Facade for this example
      // All You have to do is create an array like this one. We strongly recomend the use of a model accessor in order to avoid duplicated code and provide one single source of truth for your job offer array representation 
@@ -93,16 +91,25 @@ public function show(Request $request, $id)
      // GG IZI
     GJob::fields($jobArray);
     
-    return view('details', compact('jobOffer'));
+    return view('details');
 }
 ```
 
-Now, all we have to do is call to the `generate()` method directly on your view
+Now, all we have to do is call to the `generate()` method directly on your view before `</body>` close tag
 
 ```php
-{{ GJob::generate() }}
+.
+.
+.
+.
 
 <p>I'm the best job offer ever!</p>
+
+<script type="application/ld+json">
+    {{ GJob::generate() }}
+</script>
+
+</body>
 ```
 
 And voila! A beautiful and fully compatible json is rendered for You. 
