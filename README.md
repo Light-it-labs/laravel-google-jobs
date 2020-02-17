@@ -65,7 +65,8 @@ public function show(Request $request, $id)
     // Lets say we want to allow google to render our job offer
     
     // Cool! Is time to do some magic with this package, we are going to use the Facade for this example
-     // All You have to do is create an array like this one. We strongly recomend the use of a model accessor in order to avoid duplicated code and provide one single source of truth for your job offer array representation 
+     // All You have to do is create an array like this one. 
+      // We strongly recomend the use of a model accessor in order to avoid duplicated code and provide one single source of truth for your job offer array representation 
     $jobArray = [
         'datePosted' => '...',
         'text' => '...',
