@@ -1,5 +1,6 @@
 {
     "name": "lightit/laravel-google-jobs",
+    "license": "MIT",
     "require": {
         "php": "^7.2",
         "ext-json": "*",
