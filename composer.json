@@ -8,7 +8,7 @@
     },
     "require-dev": {
         "orchestra/testbench": "~3.8.4|^4.0",
-        "phpspec/phpspec": "~5.1.1"
+        "phpspec/phpspec": "^6.1.1"
     },
     "autoload": {
         "psr-4": {
