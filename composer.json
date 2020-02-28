@@ -1,6 +1,5 @@
 {
     "name": "lightit/laravel-google-jobs",
-    "minimum-stability": "dev",
     "require": {
         "php": "^7.2",
         "ext-json": "*",
@@ -20,7 +19,6 @@
             "Lightit\\LaravelGoogleJobs\\Tests\\": "tests"
         }
     },
-    "prefer-stable": true,
     "extra": {
         "laravel": {
             "providers": [
