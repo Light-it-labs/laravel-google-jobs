@@ -19,6 +19,8 @@ Laravel Google Jobs provides two possible ways of json generation:
 of `Lightit\LaravelGoogleJobs\GJob` class.
 
 ```php
+use Lightit\LaravelGoogleJobs\Contracts\GJobContract;
+
 class JobOfferController extends Controller 
 {
     /* @var GjobContract */
@@ -107,7 +109,7 @@ Now, all we have to do is call to the `generate()` method directly on your view 
 <p>I'm the best job offer ever!</p>
 
 <script type="application/ld+json">
-    {{ GJob::generate() }}
+    {!! GJob::generate() !!}
 </script>
 
 </body>
