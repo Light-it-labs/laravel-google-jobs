@@ -1,5 +1,8 @@
 {
     "name": "lightit/laravel-google-jobs",
+    "description": "Google Job Posting integration for Laravel",
+    "keywords": ["google-job-posting", "google-jobs", "laravel-google-jobs", "laravel-google-job-posting", "laravel"],
+    "type": "library",
     "license": "MIT",
     "require": {
         "php": "^7.2",
