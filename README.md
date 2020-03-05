@@ -1,5 +1,5 @@
 # Laravel Google Job Posting Integration
-![](https://travis-ci.com/Light-it-labs/laravel_google_jobs.svg?branch=master)
+[![Build Status](https://travis-ci.com/Light-it-labs/laravel-google-jobs.svg?branch=master)](https://travis-ci.com/Light-it-labs/laravel-google-jobs)
 
 This package allows you to generate a valid JSON object for Google Jobs Announcements in a easy and Laravel way.
 
@@ -21,14 +21,14 @@ of `Lightit\LaravelGoogleJobs\GJob` class.
 ```php
 use Lightit\LaravelGoogleJobs\Contracts\GJobContract;
 
-class JobOfferController extends Controller 
+class JobOfferController extends Controller
 {
     /* @var GjobContract */
     private $gjob;
-    
-    public function __construct(GJobContract $gjob) 
+
+    public function __construct(GJobContract $gjob)
     {
-        // $this->gjob is now a GJob class singleton instance 
+        // $this->gjob is now a GJob class singleton instance
         $this->gjob = $gjob;
     }
 
@@ -38,25 +38,25 @@ class JobOfferController extends Controller
 ## Available API
 Google Job Posting allows a specific set of fields for your jobs. Check: https://developers.google.com/search/docs/data-types/job-posting for more information.
 
-Some of these fields are required, and others are optional. This package will help you through the 
+Some of these fields are required, and others are optional. This package will help you through the
 process of generating and validating all this data properly, so you don't have to care about the formatting or the definitions of the JSON.
 
 #### Methods
-`$this->gjob->fields(array $parameters): GJob` 
+`$this->gjob->fields(array $parameters): GJob`
 
 This method adds all `array $parameters` into your current instance and performs data validations.
 If one of the required parameters is missing from the array a`Lightit\LaravelGoogleJobs\Exceptions\FieldsValidationsException` will be thrown specifying the missing required fields.
- 
+
 -----
 
-`$this->gjob->withOptionals(array $parameters): GJob` 
+`$this->gjob->withOptionals(array $parameters): GJob`
 
 As the name says, this method adds all `array $parameters` into your current instance, performing data validations. Only format validations are performed over these fields.
 
 
 -----
 
-`$this->gjob->generate(): string` 
+`$this->gjob->generate(): string`
 
 Generates the proper JSON format and validates all the instance parameters.
 
@@ -65,10 +65,10 @@ Generates the proper JSON format and validates all the instance parameters.
 public function show(Request $request, $id)
 {
     // Lets say we want to allow google to render our job offer
-    
+
     // Cool! Is time to do some magic with this package, we are going to use the Facade for this example
-     // All You have to do is create an array like this one. 
-      // We strongly recomend the use of a model accessor in order to avoid duplicated code and provide one single source of truth for your job offer array representation 
+     // All You have to do is create an array like this one.
+      // We strongly recomend the use of a model accessor in order to avoid duplicated code and provide one single source of truth for your job offer array representation
     $jobArray = [
         'datePosted' => '...',
         'text' => '...',
@@ -89,10 +89,10 @@ public function show(Request $request, $id)
         'title' => '...',
         'validThrough' => '...'
     ];
-    
+
     // Add your array into the singleton instance
     GJob::fields($jobArray);
-    
+
     return view('details');
 }
 ```
@@ -114,10 +114,10 @@ Now, all you have to do is call to the `generate()` method directly on your view
 </body>
 ```
 
-And voila! A beautiful and fully compatible JSON is rendered for you. 
- 
+And voila! A beautiful and fully compatible JSON is rendered for you.
+
 ## About Lightit
-[Light-it](https://lightit.io) is a digital product development studio with offices in the US, Uruguay and Paraguay. 
+[Light-it](https://lightit.io) is a digital product development studio with offices in the US, Uruguay and Paraguay.
 
 <img src="https://avatars1.githubusercontent.com/u/39625568?s=200&v=4" width="48">
 
