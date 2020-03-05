@@ -1,7 +1,7 @@
-# Laravel Google Job Posting Integration
+# Laravel Google Job Posting Metadata Generator
 [![Build Status](https://travis-ci.com/Light-it-labs/laravel-google-jobs.svg?branch=master)](https://travis-ci.com/Light-it-labs/laravel-google-jobs)
 
-This package allows you to generate a valid JSON object for Google Jobs Announcements in a easy and Laravel way.
+This package allows you to generate the required metadata for Google Jobs Announcements in a easy and Laravel way.
 
 ## Installation
 You can install this package via composer
