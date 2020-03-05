@@ -21,7 +21,6 @@ class Validator
     {
         return [
             'datePosted' => 'required|date',
-            'text' => 'required|string',
             'hiringOrganization' => 'required|array',
             'jobLocation' => 'required|array',
             'title' => 'required|string',
