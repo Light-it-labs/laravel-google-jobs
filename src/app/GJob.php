@@ -13,6 +13,11 @@ use Lightit\LaravelGoogleJobs\Exceptions\FieldsValidationException;
  */
 class GJob implements GJobContract
 {
+    /** @var string */
+    const CONTEXT = 'http://schema.org';
+    /** @var string */
+    const JOB_POSTING_TYPE = 'JobPosting';
+
     /** @var Validator */
     private $validator;
 
@@ -38,6 +43,10 @@ class GJob implements GJobContract
      */
     public function fields(array $parameters): GJob
     {
+        // Set default parameters
+        $parameters['@context'] = self::CONTEXT;
+        $parameters['@type'] = self::JOB_POSTING_TYPE;
+
         $this->requiredFields = $parameters;
 
         return $this;

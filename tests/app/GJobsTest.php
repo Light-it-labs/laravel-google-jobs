@@ -25,33 +25,21 @@ class GJobsTest extends BaseTest
     public function test_generate()
     {
         // Given
-        $jobArray = [
-            'datePosted' => '2016-02-18',
-            'text' => 'lorem',
-            'hiringOrganization' => [
-                '@type' => 'Organization',
-                'name' => 'Test company',
-                'sameAs' => 'https://google.com',
-                'logo' => 'https://google.com'
-            ],
-            'jobLocation' => [
-                '@type' => 'Place',
-                'streetAddress'=> '555 Clancy St',
-                'addressLocality'=> 'Detroit',
-                'addressRegion'=> 'MI',
-                'postalCode'=> '48201',
-                'addressCountry'=> 'US'
-            ],
-            'title' => 'Software Engineer',
-            'validThrough' => '2017-03-18T00:00'
-        ];
+        $jobArray = $this->basicJobOffer();
 
         $gJobObject = $this->gJob->fields($jobArray);
 
         // Performing
         $result = $gJobObject->generate();
+        // Add @context and @type attributes to confirm if default insertion is working properly
+        $jobArray['@context'] = GJob::CONTEXT;
+        $jobArray['@type'] = GJob::JOB_POSTING_TYPE;
 
         // Expect
         $this->assertEquals($result, json_encode($jobArray));
+
+        // Check if the default values are added
+        $this->assertArrayHasKey('@context', json_decode($result, true));
+        $this->assertArrayHasKey('@type', json_decode($result, true));
     }
 }
