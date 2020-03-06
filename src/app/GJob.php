@@ -15,7 +15,7 @@ class GJob implements GJobContract
 {
     /** @var string */
     const CONTEXT = 'http://schema.org';
-    
+
     /** @var string */
     const JOB_POSTING_TYPE = 'JobPosting';
 
@@ -66,6 +66,7 @@ class GJob implements GJobContract
     /**
      * @inheritDoc
      * @throws FieldsValidationException
+     * @throws Exceptions\WrongParameterException
      */
     public function generate(): string
     {
