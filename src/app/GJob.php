@@ -15,6 +15,7 @@ class GJob implements GJobContract
 {
     /** @var string */
     const CONTEXT = 'http://schema.org';
+    
     /** @var string */
     const JOB_POSTING_TYPE = 'JobPosting';
 
