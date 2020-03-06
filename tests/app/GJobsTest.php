@@ -4,6 +4,7 @@
 namespace Lightit\LaravelGoogleJobs\Tests\app;
 
 use Lightit\LaravelGoogleJobs\Exceptions\FieldsValidationException;
+use Lightit\LaravelGoogleJobs\Exceptions\WrongParameterException;
 use Lightit\LaravelGoogleJobs\GJob;
 use Lightit\LaravelGoogleJobs\Tests\BaseTest;
 
@@ -41,5 +42,22 @@ class GJobsTest extends BaseTest
         // Check if the default values are added
         $this->assertArrayHasKey('@context', json_decode($result, true));
         $this->assertArrayHasKey('@type', json_decode($result, true));
+    }
+
+    /**
+     * @throws FieldsValidationException
+     */
+    public function test_misspelled_or_not_existing_fields_throws_an_exception()
+    {
+        $this->expectException(WrongParameterException::class);
+
+        // Given
+        $jobArray = $this->basicJobOffer();
+        $jobArray['notValidKey'] = 'not valid value';
+
+        $gJobObject = $this->gJob->fields($jobArray);
+
+        // Performing
+        $result = $gJobObject->generate(); // Should throw WrongParameterException
     }
 }

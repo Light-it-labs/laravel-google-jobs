@@ -3,6 +3,8 @@
 
 namespace Lightit\LaravelGoogleJobs;
 
+use Lightit\LaravelGoogleJobs\Exceptions\WrongParameterException;
+
 /**
  * This Class will handle Google Jobs parameters validation
  *
@@ -20,6 +22,8 @@ class Validator
     private function rules(): array
     {
         return [
+            '@context' => 'required',
+            '@type' => 'required',
             'datePosted' => 'required|date',
             'hiringOrganization' => 'required|array',
             'jobLocation' => 'required|array',
@@ -31,9 +35,17 @@ class Validator
     /**
      * @param array $dataToValidate
      * @return \Illuminate\Contracts\Validation\Validator
+     * @throws WrongParameterException
      */
     public function make(array $dataToValidate): \Illuminate\Contracts\Validation\Validator
     {
+        // Check if $dataToValidate have only Google Job Announcements compatible keys
+        foreach($dataToValidate as $key => $value) {
+            if(! isset($this->rules()[$key])) {
+                throw new WrongParameterException($key);
+            }
+        }
+
         return \Illuminate\Support\Facades\Validator::make($dataToValidate, $this->rules());
     }
 }
