@@ -28,7 +28,10 @@ class Validator
             'hiringOrganization' => 'required|array',
             'jobLocation' => 'required|array',
             'title' => 'required|string',
-            'validThrough' => 'required|date'
+            'validThrough' => 'required|date',
+            'description' => 'nullable',
+            'baseSalary' => 'nullable',
+            'employmentType' => 'nullable'
         ];
     }
 
