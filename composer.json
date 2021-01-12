@@ -1,36 +1,42 @@
 {
-    "name": "lightit/laravel-google-jobs",
-    "description": "Google Job Posting integration for Laravel",
-    "keywords": ["google-job-posting", "google-jobs", "laravel-google-jobs", "laravel-google-job-posting", "laravel"],
-    "type": "library",
-    "license": "MIT",
-    "require": {
-        "php": "^7.2",
-        "ext-json": "*",
-        "illuminate/support": "5.8.*|^6.0|^7.0"
-    },
-    "require-dev": {
-        "orchestra/testbench": "~3.8.4|^4.0",
-        "phpspec/phpspec": "^6.1.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "Lightit\\LaravelGoogleJobs\\": "src/app"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Lightit\\LaravelGoogleJobs\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Lightit\\LaravelGoogleJobs\\Providers\\LaravelGoogleJobsServiceProvider"
-            ],
-            "aliases": {
-                "GJob": "Lightit\\LaravelGoogleJobs\\Facades\\GJob"
-            }
-        }
+  "name": "lightit/laravel-google-jobs",
+  "description": "Google Job Posting integration for Laravel",
+  "keywords": [
+    "google-job-posting",
+    "google-jobs",
+    "laravel-google-jobs",
+    "laravel-google-job-posting",
+    "laravel"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^7.2",
+    "ext-json": "*",
+    "illuminate/support": "5.8.*|^6.0|^7.0|^8.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "~3.8.4|^4.0",
+    "phpspec/phpspec": "^6.1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lightit\\LaravelGoogleJobs\\": "src/app"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lightit\\LaravelGoogleJobs\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Lightit\\LaravelGoogleJobs\\Providers\\LaravelGoogleJobsServiceProvider"
+      ],
+      "aliases": {
+        "GJob": "Lightit\\LaravelGoogleJobs\\Facades\\GJob"
+      }
+    }
+  }
 }
