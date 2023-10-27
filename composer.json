@@ -11,9 +11,9 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "php": "^7.2",
+    "php": "^8.0",
     "ext-json": "*",
-    "illuminate/support": "5.8.*|^6.0|^7.0|^8.0"
+    "illuminate/support": "5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0"
   },
   "require-dev": {
     "orchestra/testbench": "~3.8.4|^4.0",
